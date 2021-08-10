@@ -1,0 +1,217 @@
+.overLay {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  /* Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200px 0;
+  padding-bottom: 20vh;
+  @media (max-width: 768px) {
+    padding-top: 4vh;
+  }
+  .rightSide {
+    .rightStatusBar {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      right: 5vw;
+      top: 50%;
+      // gap: 20px;
+      transform: translateY(-50%);
+      div {
+        width: 29px;
+        height: 29px;
+        border: 3px solid rgba(45, 0, 0, 0.64);
+        border-radius: 50%;
+        margin-bottom: 22px;
+        position: relative;
+      }
+      .selected {
+        border: 3px solid #2d0000;
+        &::after {
+          content: '';
+          width: 17px;
+          height: 17px;
+          background-color: #2d0000;
+          position: absolute;
+          border-radius: 50%;
+          top: 14%;
+          left: 14%;
+        }
+      }
+      .statusCircle {
+        cursor: pointer;
+      }
+    }
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    min-height: 70vh;
+    h1 {
+      font-family: Playfair Display;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 72px;
+      line-height: 96px;
+      position: relative;
+      color: #2d0000;
+      margin-bottom: 4vh;
+      @media (max-width: 768px) {
+        font-size: 48px;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      // @media (max-width: 450px) {
+      //   font-size: 42px;
+      // }
+      &::before {
+        content: '';
+        width: 168px;
+        height: 12px;
+        margin-bottom: 48px;
+        background: rgba(45, 0, 0, 0.64);
+        position: absolute;
+        top: -30px;
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+      &::after {
+        content: '';
+        left: 0;
+        bottom: 10px;
+        position: absolute;
+        height: 2px;
+        background-color: #2d0000;
+        width: 23rem;
+        @media (max-width: 768px) {
+          width: 15rem;
+          bottom: 22px;
+        }
+        // @media (max-width: 450px) {
+        //   width: 13rem;
+        //   bottom: 27px;
+        // }
+      }
+    }
+    .eduHeading {
+      &::after {
+        content: '';
+        left: 0;
+        bottom: 10px;
+        position: absolute;
+        height: 2px;
+        background-color: #2d0000;
+        width: 21rem;
+        @media (max-width: 768px) {
+          width: 14rem;
+          bottom: 22px;
+        }
+        // @media (max-width: 450px) {
+        //   width: 12rem;
+        //   bottom: 27px;
+        // }
+      }
+    }
+    margin-top: 40px;
+    .infoCard {
+      width: 60vw;
+      margin-bottom: 20px;
+      margin-top: 40px;
+      border-bottom: 1px solid rgba(45, 0, 0, 0.2);
+      padding-bottom: 30px;
+      &:last-child {
+        border-bottom: none;
+      }
+      .position {
+        margin-bottom: 2rem;
+        color: #2d0000;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 37px;
+        @media (max-width: 768px) {
+          font-size: 26px;
+        }
+      }
+      .cardContent {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 1021px) {
+          flex-direction: column;
+        }
+        .pos {
+          @media (max-width: 1021px) {
+            margin-top: 14px;
+          }
+        }
+        .dates {
+          width: 52vw;
+          display: flex;
+          justify-content: center;
+          div:nth-child(2) {
+            margin-left: 10vw;
+            @media (max-width: 1400px) {
+              margin-left: 8vw;
+            }
+            @media (max-width: 1021px) {
+              margin-left: 20vw;
+            }
+          }
+          @media (max-width: 1021px) {
+            justify-content: initial;
+            width: 80vw;
+          }
+          // @media (max-width: 1021px) {
+          //   margin-left: 20vw;
+          // }
+          // div{
+          //   margin: auto;
+          // }
+        }
+        .title {
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 15px;
+          text-transform: uppercase;
+          color: rgba(45, 0, 0, 0.64);
+          // width: 80px;
+        }
+        .value {
+          margin-top: 12px;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 20px;
+          color: #2d0000;
+          @media (max-width: 1021px) {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    &:nth-child(n + 2) {
+      @media (min-width: 768px) {
+        padding-top: 140px;
+      }
+    }
+  }
+}

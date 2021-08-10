@@ -1,0 +1,29 @@
+.footer {
+  z-index: 3;
+  background-color: #f4c9b0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  flex-direction: column;
+  p {
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(45, 0, 0, 0.48);
+  }
+}
+.blurLine {
+  height: 100px;
+  background-color: #f4c9b0;
+  filter: blur(20px);
+  width: 100vw;
+  position: fixed;
+  bottom: 35px;
+  @media (max-width: 600px) {
+    display: none;
+  }
+}

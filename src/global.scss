@@ -1,0 +1,32 @@
+//colors
+$primary-color: #f4c9b0;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&family=Poppins&display=swap');
+@font-face {
+  font-family: 'Graphie';
+  font-display: swap;
+  src: url('/resources/fonts/Graphie/Graphie-Book.otf');
+  // src: url('/resources/fonts/Graphie/Graphie-SemiBold.otf');
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Graphie', sans-serif;
+  color: #2d0000;
+}
+body {
+  background-color: $primary-color;
+}
+
+// animations
+.bar1.open {
+  transform: translateY(4px) rotate(45deg);
+}
+.bar3.open {
+  transform: rotate(-45deg);
+}
+.bar2.open {
+  display: none;
+}

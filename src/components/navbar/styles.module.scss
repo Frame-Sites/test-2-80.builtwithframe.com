@@ -1,0 +1,189 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vh 5vw;
+  @media (max-width: 900px) {
+    padding: 1rem 20px;
+  }
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #f4c9b0;
+  // background-color: #f4c9b0cf;
+  z-index: 2;
+  .navLeft {
+    .tempImage {
+      background-image: url('/images/frame-logo.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+    }
+  }
+  .navMiddle {
+    display: flex;
+    justify-content: center;
+    ul {
+      display: flex;
+      li {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        color: #2d0000;
+        position: relative;
+        list-style: none;
+        // margin-left: 2rem;
+        &:nth-child(1) {
+          margin-left: 0;
+        }
+        margin-left: 6rem;
+        cursor: pointer;
+        @media (max-width: 1200px) {
+          margin-left: 4rem;
+        }
+        &:hover {
+          font-weight: 600 !important;
+          &::after {
+            content: '';
+            height: 5px;
+            width: 160%;
+            background-color: #2d0000;
+            position: absolute;
+            // border-radius: 12px;
+            left: -30%;
+            margin-top: 30px;
+          }
+        }
+      }
+      .activeLink {
+        // font-style: normal;
+        font-weight: 600 !important;
+        &::after {
+          content: '';
+          height: 5px;
+          width: 160%;
+          background-color: #2d0000;
+          position: absolute;
+          // border-radius: 12px;
+          left: -30%;
+          margin-top: 30px;
+        }
+      }
+    }
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+  .navRight {
+    button {
+      width: 110px;
+      height: 40px;
+      background: #2d0000;
+      border-radius: 8px;
+      color: #f4c9b0;
+      font-weight: bolder;
+      font-weight: 700;
+      font-size: 17px;
+      cursor: pointer;
+      border: transparent;
+      &:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.411);
+      }
+    }
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+  .navRightMobile {
+    display: none;
+    cursor: pointer;
+    div {
+      height: 2px;
+      width: 18px;
+      // border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.856);
+      margin-bottom: 2px;
+      // transition: all 0.4s ease-in-out;
+    }
+    @media (max-width: 900px) {
+      display: block;
+    }
+  }
+  .navMobile {
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    background-color: #f4c9b0;
+    height: 100vh;
+    width: 90vw;
+    // width: 100%;
+    z-index: -2;
+    top: -100vh;
+    opacity: 0;
+    // border-radius: 32px;
+    // height: 20rem;
+    &.open {
+      top: 40px;
+      opacity: 1;
+    }
+    ul {
+      padding: 20px;
+      margin: 0;
+      li {
+        list-style: none;
+        font-size: 20px;
+        padding-top: 40px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.678);
+        cursor: pointer;
+        a {
+          color: black;
+          font-weight: 700;
+        }
+        &:hover,
+        &:focus {
+          font-weight: bold;
+          border-bottom: 2px solid #2d0000;
+        }
+      }
+      .activeMobileLink {
+        font-weight: bold;
+        border-bottom: 2px solid #2d0000;
+      }
+      a {
+        &:first-child {
+          padding-top: 74px;
+        }
+      }
+    }
+    @media (min-width: 900px) {
+      display: none;
+    }
+    @media (max-width: 900px) {
+      width: 100vw;
+      left: 0;
+    }
+  }
+}
+.navMobileButtom {
+  width: 100%;
+  background-color: #2d0000;
+  color: white;
+  // height: 3rem;
+  // text-align: center;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border: transparent;
+  &:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.411);
+  }
+}

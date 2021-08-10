@@ -1,0 +1,47 @@
+name: deploy-production-branch
+on:
+  workflow_dispatch:
+    inputs:
+      GATSBY_API_KEY:
+        description: 'GATSBY_API_KEY'
+        required: false
+      GATSBY_API_ENDPOINT:
+        description: 'GATSBY_API_ENDPOINT'
+        required: false
+      GATSBY_HOMEPAGE:
+        description: 'GATSBY_HOMEPAGE'
+        required: false
+      GATSBY_ACCOUNT_ID:
+        description: 'GATSBY_ACCOUNT_ID'
+        required: false
+      AWS_ACCESS_KEY_ID:
+        description: 'AWS_ACCESS_KEY_ID'
+        required: false
+      AWS_SECRET_ACCESS_KEY:
+        description: 'AWS_SECRET_ACCESS_KEY'
+        required: false
+      CLOUDFRONT_ID:
+        description: 'CLOUDFRONT_ID'
+        required: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        run: yarn
+      - name: Deploy
+        uses: ngduc/vercel-deploy-action@master
+        with:
+          vercel-cli: now
+          vercel-args: '--prod'
+          vercel-token: ${{ github.event.inputs.GATSBY_HOMEPAGE }}
+          vercel-org-id: ${{ github.event.inputs.CLOUDFRONT_ID }}
+          vercel-project-id: ${{ github.event.inputs.GATSBY_ACCOUNT_ID }}
+          scope: ${{ github.event.inputs.CLOUDFRONT_ID }}
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true

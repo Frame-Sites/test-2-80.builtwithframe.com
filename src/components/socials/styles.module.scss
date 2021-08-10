@@ -1,0 +1,119 @@
+.landing {
+  .socials {
+    display: flex;
+    justify-content: flex-start;
+    // margin-top: 21px;
+    position: fixed;
+    left: 5vw;
+    flex-flow: column;
+    top: 50%;
+    // gap: 20px;
+    transform: translateY(-50%);
+    z-index: 1;
+    a,
+    span {
+      display: inline-block;
+      width: 21px;
+      height: 21px;
+      margin-bottom: 22px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .facebookIcon {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('/images/facebook-black.svg');
+    }
+    .twitterIcon {
+      background-image: url('/images/Twitter-black.svg');
+      background-size: contain;
+    }
+    .linkedinIcon {
+      background-image: url('/images/linkedin-black.svg');
+      background-size: contain;
+    }
+    .githubIcon {
+      background-image: url('/images/github.png');
+      background-size: contain;
+    }
+    .mediumIcon {
+      background-image: url('/images/Medium-logo.svg');
+      background-size: contain;
+    }
+    .instagramIcon {
+      background-image: url('/images/instagram-logo.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      // transform: rotate(271deg);
+    }
+    .issuuIcon {
+      background-image: url('/images/Issuu-logo.svg');
+      background-size: contain;
+    }
+    @media (max-width: 1100px) {
+      justify-content: center;
+      // align-items: center;
+    }
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  .home {
+    @media (max-width: 400px) {
+      top: 64%;
+    }
+  }
+  .rightSide {
+    .rightStatusBar {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      right: 5vw;
+      top: 50%;
+      // gap: 20px;
+      transform: translateY(-50%);
+      div {
+        width: 29px;
+        height: 29px;
+        border: 3px solid rgba(45, 0, 0, 0.64);
+        border-radius: 50%;
+        margin-bottom: 22px;
+        position: relative;
+      }
+      .selected {
+        border: 3px solid #2d0000;
+        &::after {
+          content: '';
+          width: 17px;
+          height: 17px;
+          background-color: #2d0000;
+          position: absolute;
+          border-radius: 50%;
+          top: 14%;
+          left: 14%;
+        }
+      }
+    }
+  }
+  // .animateOverlay{
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   background: #f4c9b0;
+  //   z-index: 1;
+  //   // display:none;
+  //   margin-left:-100vw;
+  //   transition: all .8s ease-in-out;
+  // }
+  // .animate{
+  //   // transform: translateY(100vw);
+  //   margin-left: 100vw;
+  // }
+  // .back {
+  //   margin-left: -100vw;
+  // }
+}
